@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import ApplicationForm from './ApplicationForm'
+import {BrowserRouter,Route} from 'react-router-dom'
+import AdminDash from './Admindash'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props){
+    return(
+        <BrowserRouter>
+        <div>
+            <h1>User Job Application</h1>
+            <Route path="/" component={ApplicationForm} exact={true}/>
+            <Route path="/admin" component={AdminDash} exact={true}/>
+        </div>
+        </BrowserRouter>
+        
+    )
 }
 
-export default App;
+export default App
